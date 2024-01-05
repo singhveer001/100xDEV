@@ -1,6 +1,6 @@
 // Callback hell
 // This look like very messi and non understandable
-
+// Here we doing async chaining
 
 setTimeout(()=>{
     console.log("Medicine 1 recieved");

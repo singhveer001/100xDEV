@@ -17,5 +17,5 @@ for(var i=0; i<1000; i++){
     counter2 += 1;
 }
 // first ye print hoga & upar vale funcyion ke vja se clear bhi ho jayega 
-// then upar vala loop chalne lgega or vo one by one print hoke clear hote rhega
+// then upar vala loop(setInterval) chalne lgega or vo one by one print hoke clear hote rhega
 console.log(counter2);  
