@@ -1,4 +1,4 @@
-// Length , Last index , indexOf
+// Length , lastindexOf , indexOf
 
 function findIndex (str,target){
     console.log("Original String",str);

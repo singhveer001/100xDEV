@@ -1,4 +1,4 @@
-// Trim => basically it trims the space
+// Trim => basically it trims the spaces
 
 
 let value = "    Veerbhan singh     ";
