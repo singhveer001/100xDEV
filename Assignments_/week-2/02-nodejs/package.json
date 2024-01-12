@@ -1,0 +1,15 @@
+{
+  "name": "02-nodejs",
+  "version": "1.0.0",
+  "description": "In this series of assignments, you are going to create native HTTP servers in Node.js which will handle different kinds of application logics.",
+  "main": "fileServer.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
