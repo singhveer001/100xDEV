@@ -1,0 +1,4 @@
+
+ hello veeer this is text file that we written to show in js file 
+ so          good         to   se there.
+ bye
