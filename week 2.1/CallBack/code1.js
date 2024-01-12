@@ -1,5 +1,6 @@
 // The problem in this code is that here we repeating 
 // same type of functions(code) again and again That is 
+// Problem here is DRY( DON'T REPEAT YOURSELF )
 
 function square (n){
     return n * n;

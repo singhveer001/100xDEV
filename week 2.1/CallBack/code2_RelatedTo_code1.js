@@ -1,5 +1,6 @@
 // In This code we created one generic function so we dont have to 
 // repaeat same function Again and again 
+// Code1 and code2 both file code are same and work same 
 function square (n){
     return n * n;
 }

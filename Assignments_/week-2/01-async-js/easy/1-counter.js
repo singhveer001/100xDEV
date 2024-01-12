@@ -3,8 +3,8 @@ console.log(currentCount);
 function UpdateCounter(){
     
     currentCount++;
-    console.clear();
-    console.log(currentCount);
+    console.clear(); // clearing previous value 
+    console.log(currentCount); // Printing current value
     
 }
 

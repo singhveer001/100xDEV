@@ -10,6 +10,7 @@ function myOwnSetTimeout(callback,duration){
 */
 
 // Returning a promise
+// Defining
 function promisifyiedMyOwnSetTimeout(duration){
     const p = new Promise(function(resolve){
         setTimeout(function(){
@@ -19,8 +20,8 @@ function promisifyiedMyOwnSetTimeout(duration){
     return p;
 }
 
+// Calling
 let ans = promisifyiedMyOwnSetTimeout(1000);
-
 ans.then(function(){
     console.log("Timeout is done");
 })
