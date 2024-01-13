@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express();  // Call the express function and get it in the app 
+const app = express();  // Call the express function and get it in the app. 
 const port = 3030
 
 // Define the routes
