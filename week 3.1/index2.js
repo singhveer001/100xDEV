@@ -1,4 +1,4 @@
-// Creating middleware to find number of request
+// Creating middleware to count number of request
 
 const express = require("express");
 const app = express();
