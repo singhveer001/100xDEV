@@ -23,4 +23,12 @@ app.get('/errorCount', function(req, res) {
   res.status(200).json({ errorCount });
 });
 
+// Error handling middleware (it always defined in the end of your file)
+// it takes 4 argument
+app.use(function(err,req,res,next){
+    res.status(404).send({})
+    errorCount = errorCount + 1; // for counting error everytime when an exception is happen
+})
+
+// app.listen(3000);
 module.exports = app;
