@@ -3,6 +3,7 @@ const express = require("express")
 const app = express()
 
 // Function that returns a boolean if the age of a person is more than 14 
+// Ticket cheker
 function isOldEnough(age){
     if(age>=14){
         return true;
@@ -39,3 +40,8 @@ app.get('/ride2',function(req,res){
 app.listen(3200,function(){
     console.log("Server started");
 })
+
+// Here ticket checker is doing his job correctly 
+// This is one way to intoduce ticket checker 
+// But a better way is middleware that we see in index2.js file
+// Go and see there how syntax changes and why that syntax is better doing the same thing via middlewares
