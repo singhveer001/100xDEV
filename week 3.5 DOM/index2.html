@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascript HTML DOM</h2>
+
+    <div>Div one</div>
+    <p class="intro">Paragraph one</p>
+    <div>Div Two</div>
+    <p class="subheading">Paragraph Two</p>
+    <div>Yet Another DIv</div>
+
+    <script>
+        var paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(paragraph => paragraph.style.backgroundColor = "red")
+    </script>
+
+</body>
+</html>
