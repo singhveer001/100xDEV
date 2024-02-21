@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="first number" id="firstNum"><br><br>
+    <input type="text" placeholder="second number" id="secondNum"><br><br>
+    <button onclick="populateDiv()">Calculate sum</button><br><br> 
+
+    <div id="finalSum"></div>
+
+    <script>
+        function populateDiv(){
+            const element = document.getElementById("finalSum")
+            const a = document.getElementById("firstNum").value ;  
+            const b = document.getElementById("secondNum").value ;  
+            element.innerHTML = "Sum is: " + (parseInt(a) + parseInt(b));
+        }
+    </script>
+</body>
+</html>
