@@ -1,0 +1,63 @@
+<html>
+
+<script>
+    // Using the Fetch API with a Promise
+    function populateDiv() {
+        const a = document.getElementById("firstNum").value;
+        const b = document.getElementById("secondNum").value;
+
+        fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(function (ans) {
+                document.getElementById("finalSum").innerHTML = ans;
+            })
+            .catch(function (error) {
+                console.error('Fetch error:', error);
+                document.getElementById("finalSum").innerHTML = "Error calculating sum.";
+            });
+    }
+    // Using async await 
+    async function populateDiv2(){
+        const a = document.getElementById("firstNum").value;
+        const b = document.getElementById("secondNum").value;
+
+        const response = await fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+        const ans = await response.text()
+        document.getElementById("finalSum").innerHTML = ans;
+    }
+</script>
+
+<body>
+    <input type="text" placeholder="first number" id="firstNum"><br><br>
+    <input type="text" placeholder="second number" id="secondNum"><br><br>
+    <button onclick="populateDiv2()">Calculate sum</button><br><br>
+
+    <div id="finalSum"></div>
+</body>
+
+</html>
+
+
+
+<!-- Harkirat promoise script part   -->
+<!-- 
+        <script>
+        function populateDiv(){
+            const a = document.getElementById("firstNum").value;
+            const b = document.getElementById("secondNum").value;
+            //axios
+            fetch("https://sum-server.100devs.com/sum?a=" + a + "&b=" + b) //This api was taken from harkirat deployed logic
+                .then(function(response){
+                    response.text()
+                        .then(function(ans){
+                            document.getElementById("finalSum").innerHTML = ans;
+                        })
+                })
+        }
+    </script>
+ -->
