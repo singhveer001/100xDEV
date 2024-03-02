@@ -1,0 +1,48 @@
+
+<html>
+
+<script>
+        let timeout;
+        function debouncePopulateDiv(){
+            // Delay the call to populateDiv until ive not been called for 100ms
+            // and ivve been called atleast once 
+           
+           // how do you cancel a clock 
+            // clearTimout
+            clearTimeout(timeout);
+             
+            timeout = setTimeout(function(){
+                populateDiv()
+            },1000)
+
+        
+        }
+
+        function populateDiv(){
+            const a = document.getElementById("firstNum").value;
+            const b = document.getElementById("secondNum").value;
+      
+            fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+                .then(function(response){
+                    response.text()
+                        .then(function(ans){
+                            document.getElementById("finalSum").innerHTML = ans;
+                        })
+                })
+        }
+    
+
+</script>
+
+<body>
+    <input oninput="debouncePopulateDiv()" type="text" placeholder="first number" id="firstNum"><br><br>
+    <input oninput="debouncePopulateDiv()" type="text" placeholder="second number" id="secondNum"><br><br>
+    <!-- <button onclick="populateDiv2()">Calculate sum</button><br><br> -->
+
+    <div id="finalSum"></div>
+</body>
+
+</html>
+
+
+
