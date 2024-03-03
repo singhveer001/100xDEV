@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input id="title" type="text" placeholder="title"> <br> <br>
+        <input id="description" type="text" placeholder="description"> <br> <br>
+        <button onclick="addTodo()">Add Todo</button> <br><br>
+        <div id="container"></div>
+    </div>
+
+    <script>
+        let globalId = 1; 
+
+        function markAsDone(todoId){
+            const parent = document.getElementById(todoId);
+            parent.children[2].innerHTML = "Done!"
+        }
+
+        function createChild(title,description,id){
+            const child = document.createElement("div")
+            const firstChild = document.createElement("div")
+            firstChild.innerHTML = title;
+            const secondChild = document.createElement("div")
+            secondChild.innerHTML = description;
+            const thirdChild = document.createElement("button")
+            thirdChild.innerHTML = "Mark As Done"
+            thirdChild.setAttribute("onClick",`markAsDone(${id})`);
+            child.appendChild(firstChild)
+            child.appendChild(secondChild)
+            child.appendChild(thirdChild)
+            child.setAttribute("id",id)
+            return child
+        }
+
+        function addTodo(){
+            const title =document.getElementById("title").value
+            const description = document.getElementById("description").value       
+            const parent = document.getElementById("container") // this will create <div> </div> element which is not currently present in dom
+          
+            parent.appendChild(createChild(title,description,globalId++))
+        
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!-- // This is hole logic if we cannot use createChild par => But this is not better way
+/*          const originalHtml = document.getElementById("container").innerHTML 
+            document.getElementById("container").innerHTML = originalHtml + `<div>
+            <div>${title}</div>
+            <div>${description}</div>
+            <button>Mark as done</button>
+        </div>`
+*/      -->
