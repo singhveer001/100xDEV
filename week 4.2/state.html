@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input id="title" type="text" placeholder="title"> <br> <br>
+        <input id="description" type="text" placeholder="description"> <br> <br>
+
+        <div id="container"></div>
+    </div>
+
+    <script>
+
+        function createChild(title,description,id){
+            const child = document.createElement("div")
+            const firstChild = document.createElement("div")
+            firstChild.innerHTML = title;
+            const secondChild = document.createElement("div")
+            secondChild.innerHTML = description;
+            const thirdChild = document.createElement("button")
+            thirdChild.innerHTML = "Mark As Done";
+            thirdChild.setAttribute("onClick",`markAsDone(${id})`);
+            child.appendChild(firstChild)
+            child.appendChild(secondChild)
+            child.appendChild(thirdChild)
+            child.setAttribute("id",id)
+            return child;
+        }
+
+        // state will always be  an array
+        // Every element of state  would have title, description and id
+
+        function updateDomAccToState(state){
+            const parent = document.getElementById("container");
+            parent.innerHTML = "";
+            for(let i=0; i<state.length;i++){
+                const child = createChild(state[i].title,state[i].description,state[i].id);
+                parent.appendChild(child);
+            }
+        }
+        
+        // updateDomAccToState([{
+        //     title: "go to gym",
+        //     description: "go to gym from 5 to 7",
+        //     id : 1
+        // }])
+        
+        window.setInterval(async function(){
+            const res = await fetch("https://sum-server.100xdevs.com/todos")
+            const json = await res.json();
+            updateDomAccToState(json.todos)
+        },2000)
+
+    </script>
+</body>
+</html>
+
+
+
