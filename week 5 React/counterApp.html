@@ -1,0 +1,43 @@
+<!-- 
+// Creating counter App using State/Components
+// Here we cant using react and trying to do that thing in html/js 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="buttonParent"></div>
+
+    <script>
+        //State initialization
+        let state ={
+            count : 0
+        }
+
+        // definding component(part1)
+        function onButtonPress(){
+            state.count++;
+            buttonComponentReRender();
+        }
+
+        function buttonComponentReRender(){
+            document.getElementById("buttonParent").innerHTML = "";
+            const component = buttonComponent(state.count);
+            document.getElementById("buttonParent").appendChild(component);
+        }
+
+         // definding component(part2)
+        function buttonComponent(count){
+            const button = document.createElement("button");
+            button.innerHTML = `counter ${count}`;
+            button.setAttribute("onclick",'onButtonPress()');
+            return button;
+        }
+
+        buttonComponentReRender();
+    </script>
+</body>
+</html>
