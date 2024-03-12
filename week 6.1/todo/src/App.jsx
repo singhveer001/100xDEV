@@ -53,7 +53,7 @@ function App() {
     
         <button onClick={addTodo}>Add a todo</button>
         {todos.map(function(todo) { 
-         return <Todo title={todo.title} description={todo.description}/>
+         return <Todo key={todo.id} title={todo.title} description={todo.description}/>
           })}
     </div>
   )
