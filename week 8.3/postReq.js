@@ -44,6 +44,8 @@ const axios = require("axios")
 
 
 // One more way to send if you dont want to atach axios.post
+// Here we use data in place of body
+// Here we specify everything in single object
 async function main(){
     const response = await axios(
     {  
@@ -54,7 +56,7 @@ async function main(){
             },
         data : {
             "username" : "SVeer"
-        }
+        } 
         }
     );
     console.log(response.data);
