@@ -1,5 +1,7 @@
  import { Client } from "pg";
  import express from "express";
+ import dotenv from 'dotenv'
+ dotenv.config()
 
  const app = express()
  app.use(express.json())
@@ -9,7 +11,7 @@
     port : 5432,
     database:'test',
     user : 'postgres',
-    password : 'Veerbhan@1'
+    password : process.env.POSTGRESS_PASS
  })
 
  client.connect()

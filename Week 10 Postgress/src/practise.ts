@@ -1,13 +1,14 @@
  import { Client } from "pg";
+ import dotenv from 'dotenv'
+ dotenv.config()
 
  const client = new Client ({
     host : 'localhost',
     port : 5432,
     database:'test',
     user : 'postgres',
-    password : 'Veerbhan@1'
+    password : process.env.POSTGRESS_PASS
  })
-
  client.connect()
 
  async function createUserTable(){
